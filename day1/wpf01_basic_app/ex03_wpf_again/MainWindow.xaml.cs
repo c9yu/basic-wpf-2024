@@ -20,5 +20,23 @@ namespace ex03_wpf_again
         {
             InitializeComponent();
         }
+
+        private void SldTemp_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            PgbTemp.Value = e.NewValue;
+        }
+
+        private void BtnCheck_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(PsbTemp.Password);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string mediaFileName = "wpf001.mp4";
+            string mediaDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string mediaFilePath = System.IO.Path.Combine(mediaDirectory, "Videos", mediaFileName);
+            MdeMovie.Source = new Uri(mediaFilePath);
+        }
     }
 }
