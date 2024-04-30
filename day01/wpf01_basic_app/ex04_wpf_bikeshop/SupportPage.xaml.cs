@@ -41,7 +41,8 @@ namespace ex04_wpf_bikeshop
 
         private void LsbBIkes_SelectionChanged(object sender, SelectionChangedEventArgs e) 
         {
-            MessageBox.Show((LsbBikes.SelectedItem as Bike).Speed.ToString());
+            var selItem = (LsbBikes.SelectedItem as Bike);
+            MessageBox.Show(selItem.Speed.ToString() + " / " + selItem.Color.ToString());
         }
     }
 }
