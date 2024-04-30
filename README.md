@@ -25,5 +25,10 @@ IoT 개발자 WPF 학습 리포지토리
 
 ## 2일차(2024-04-30)
 - WPF 기본학습
+    - 데이터 바인딩 : 데이터소스(DB, 엑셀, txt, 클라우드에 보관된 데이터 원본)의 데이터를 쉽게 가져다 쓰기 위한 데이터 핸들링 방법
+        - 데이터와 개발을 분리하려면 '데이터 바인딩' 뿐이다.
+        - xaml : {Binding Path = 속성, ElementName = 객체, Mode=(OneWay|TwoWay), StringFormat, StringFormat = {0:#,#}}
+        - dataContext : 데이터를 담아서 전달하는 이름
+
     - 디자인, C# 코드 완전분리 개발 - MVVM 디자인패턴 (요즘 많이 씀. 근데 엄청 어려움)
     - 디자인 코딩 방법

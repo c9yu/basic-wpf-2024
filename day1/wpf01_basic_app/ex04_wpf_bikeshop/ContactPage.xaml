@@ -17,5 +17,6 @@
         <TextBox Margin="77,14,31,0" TextWrapping="Wrap" 
                  VerticalAlignment="Top" ToolTip="받는 사람 주소"/>
         <TextBox Margin="77,45,31,19" TextWrapping="Wrap" ToolTip="내용입력"/>
+        <Label
     </Grid>
 </Page>
