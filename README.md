@@ -48,12 +48,13 @@ IoT 개발자 WPF 학습 리포지토리
         - View : 디스플레이 화면 담당, 순수 xaml로만 구성
         - Controller : View를 제어, Model 처리 중앙에 관장
 
-    - MVM(Model View ViewModel)
+    - MVVM(Model View ViewModel)
         - Model : Data 입출력 처리를 담당(DB site), View에 제공할 데이터...
         - View : 화면, 순수 xaml로만 구성
         - ViewModel : 뷰에 대한 메서드, 액션, INotifyPropertyF Changed를구현
+    
+    ![MVVM패턴](https://raw.githubusercontent.com/c9yu/basic-wpf-2024/main/imgs/wpf001.png)
         
-    ![MVM 패턴]()
     - 권장 구현방법
         - ViewModel 생성, 알림 속성 구현
         - View에 View을 데이터바인딩
@@ -80,8 +81,9 @@ IoT 개발자 WPF 학습 리포지토리
     9. Bootstrapper.cs에 onstartup()에 내용을 변경
     10. View 폴더에 MainView.xaml 만들기                                                                                                  
 
-    - 작업 분리
+    - 작업 분리 (3인으로 분리)
         - DB 개발자 - DBMS 테이블 생성, Models에 클래스 작업
+        
 
 - WPF의 기본 학습
     - 옵저버 패턴
