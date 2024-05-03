@@ -114,4 +114,8 @@ IoT 개발자 WPF 학습 리포지토리
 
 
 
-    ![실행화면](https://raw.githubusercontent.com/c9yu/basic-wpf-2024/main/imgs/wpf001.png)
+    ![실행화면](https://raw.githubusercontent.com/c9yu/basic-wpf-2024/main/imgs/wpf002.png)
+
+## 5일차 (2024-05-07)
+- Caliburn.Micro + MahApps.Metro
+    - Metro(Modern UI) 디자인 접목
