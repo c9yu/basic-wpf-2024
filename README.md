@@ -88,3 +88,30 @@ IoT 개발자 WPF 학습 리포지토리
 - WPF의 기본 학습
     - 옵저버 패턴
     - 디자인 리소스
+
+## 4일차 (2024-05-03)
+- Caliburn.Micro
+    - 작업 분리
+        - Xaml디자이너 - xaml 파일만 디자인
+        - ViewModel 개발자 - Model에 있는 DB 관련정보와 View와 연계 전체구현 작업
+
+    - Caliburn.Micro 특징
+        - Xaml 디자인시 {Binding ...} 잘 사용하지 않음
+        - 대신 x:Name을 사용
+
+    - MVVM 특징
+        - 예외발생 시 예외 메시지 표시없이 프로그램 종료
+            - 이 경우 무조건 디버깅 해야함
+        - ViewModel에서 디버깅 시작
+        - View.xaml 바인딩, 버튼클릭 이름(ViewModel 속성, 메서드) 지정 주의
+        - Model 내 속성 DB 테이블 컬럼 이름 일치, CRUD 쿼리문 오타 주의
+        - ViewModel 부분
+            - 변수, 속성으로 분리
+            - 속성이 Model내의 속성과 이름이 일치
+            - List 사용불가 -> BindableCollection으로 변경
+            - 메서드와 이름이 동일한 Can... 프로퍼터 지정, 버튼 활성/비활성화
+            - 모든 속성에 NotifyofPropertyChange() 메서드 존재!! (값 변경 알림)
+
+
+
+    ![실행화면](https://raw.githubusercontent.com/c9yu/basic-wpf-2024/main/imgs/wpf001.png)
