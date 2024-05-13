@@ -20,27 +20,25 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using wpf08_toyproject_app.Models;
 using CefSharp.DevTools.Network;
+using System.Collections.Generic;
+using System.Linq;
+
 
 
 namespace wpf08_toyproject_app
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// GraphWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class GraphWindow : MetroWindow
     {
 
-        private HttpClient httpClient;
-
-        public MainWindow()
+        public GraphWindow()
         {
             InitializeComponent();
-
-            httpClient = new HttpClient();
         }
 
-
-        private async void BtnReqRealtime_Click(object sender, RoutedEventArgs e)
+        private async void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             string openApiUri = "https://api.odcloud.kr/api/3080514/v1/uddi:a3cd4e3f-3ec4-41ef-9a9d-9d8e3d900522?page=1&perPage=10&returnType=JSON&serviceKey=ZXOeFsS2T%2BOaPtPG%2BXZ1uH7mmOAJjCr20kc3pO14E1yPqAG7ECyd9m%2BSw3aJJ59TLlnPz4t91RGlhZTuW29oGg%3D%3D";
             string result = string.Empty;
@@ -76,7 +74,7 @@ namespace wpf08_toyproject_app
                 var Population = new List<population>();
                 foreach (var item in jsonArray)
                 {
-                    
+
                     Population.Add(new population()
                     {
                         Location = Convert.ToString(item["구분"]),
@@ -90,22 +88,14 @@ namespace wpf08_toyproject_app
                         popman = Convert.ToInt32(item["인구수(남)"]),
                         popwoman = Convert.ToInt32(item["인구수(여)"]),
                     });
-                    
+
                 }
                 this.DataContext = Population;
-                StsResult.Content = $"OpenAPI {Population.Count}건 조회완료!";
             }
+
         }
-        private void BtnViewGraph_Click(object sender, RoutedEventArgs e)
+        public GraphWindow(double coordy, string coordx) : this()
         {
-            GraphWindow graphWindow = new GraphWindow();
-            graphWindow.Show();
         }
-
-        private void BtnSaveData_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

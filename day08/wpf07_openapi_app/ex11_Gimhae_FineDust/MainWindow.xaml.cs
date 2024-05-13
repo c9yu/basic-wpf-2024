@@ -48,6 +48,10 @@ namespace ex11_Gimhae_FineDust
                 CboReqDate.ItemsSource = saveDates;
             }
         }
+        private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            InitComboDateFromDB();
+        }
 
         // 실시간 조회 버튼 클릭
         private async void BtnReqRealtime_Click(object sender, RoutedEventArgs e)
@@ -155,10 +159,6 @@ namespace ex11_Gimhae_FineDust
             }
         }
 
-        private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void GrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

@@ -1,0 +1,85 @@
+﻿<mah:MetroWindow x:Class="wpf08_toyproject_app.GraphWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPack="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:wpf08_toyproject_app"
+        mc:Ignorable="d"
+                 
+        Title="GraphWindow" Height="450" Width="800" Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 첫 번째 열 -->
+            <Grid Grid.Column="0">
+                <!-- 첫 번째 열의 내용을 추가 -->
+            </Grid>
+
+            <!-- 두 번째 열 -->
+            <Grid Grid.Column="1">
+                <ListBox>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="위치"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="18세 이상(계)">
+                            </TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="18세 이상(남)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="18세 이상(여)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="65세 이상(계)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="65세 이상(남)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="65세 이상(여)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="인구수(계)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="인구수(남)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="인구수(여)"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </Grid>
+        </Grid>
+        
+        
+        
+    </Grid>
+</mah:MetroWindow>

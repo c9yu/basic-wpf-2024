@@ -7,7 +7,7 @@
         xmlns:iconPack="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:wpf08_toyproject_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="300" MinWidth="600" Loaded="MetroWindow_Loaded">
+        Title="PopulationCounter" Height="450" Width="800" MinHeight="300" MinWidth="600">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPack:PackIconIonicons Kind="PeopleiOS" Margin="10,7,0,0" Foreground="White"/>
@@ -18,35 +18,58 @@
         
         <!-- 행 나누기 -->
         <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="8*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
 
         <!-- 첫 번째 행 -->
         <Grid Grid.Column="0">
-            <Label Content="aaaaa" FontSize="16" FontWeight="Bold" Margin="1,1"/>
+            <Label Content="부산시 인구 통계" FontSize="16" FontWeight="Bold" Margin="10" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                
+                <Button x:Name="BtnReqRealtime" Content="실시간조회" Width="100" Margin="5, 10" 
+                        Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
+                        Click="BtnReqRealtime_Click"/>
+                
+                <Button x:Name="BtnSaveData" Content="저장" Width="80" Margin="5,10"
+                        Style="{StaticResource MahApps.Styles.Button.Square.Highlight}"
+                        Click="BtnSaveData_Click"/>
+
+                <Button x:Name="BtnViewGraph" Content="그래프" FontWeight="Bold" Width="80" Margin="5,10"
+                        Style="{StaticResource MahApps.Styles.Button.Square}"
+                        Click="BtnViewGraph_Click"/>
+
+
+            </StackPanel>
         </Grid>
 
         <!-- 두 번째 행 -->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+                  
+        <DataGrid x:Name="GrdResult" Grid.Row="1" Margin="10"
+                  IsReadOnly="True" ItemsSource="{Binding}"
+                  AutoGenerateColumns="False" 
+                  Style="{StaticResource MahApps.Styles.DataGrid.Azure}">
+            <!-- AutoGenerateColumns 중복된 데이터는 출력하지 않는다. -->
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="위치" Binding="{Binding Location}" />
+                <DataGridTextColumn Header="18세 이상(계)" Binding="{Binding TotalOvereighteen}" />
+                <DataGridTextColumn Header="18세 이상(남)" Binding="{Binding Eighteenman}" />
+                <DataGridTextColumn Header="18세 이상(여)" Binding="{Binding Eighteenwoman}" />
+                <DataGridTextColumn Header="65세 이상(계)" Binding="{Binding Totalsixtyfive}" />
+                <DataGridTextColumn Header="65세 이상(계)" Binding="{Binding Sixtyfiveman}" />
+                <DataGridTextColumn Header="65세 이상(계)" Binding="{Binding sixtyfivewoman}" />
+                <DataGridTextColumn Header="인구수(계)" Binding="{Binding Allpop}" />
+                <DataGridTextColumn Header="인구수(남)" Binding="{Binding popman}" />
+                <DataGridTextColumn Header="인구수(여)" Binding="{Binding popwoman}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
-            <Border x:Name="Graph" Grid.Column="0">
-                
-            </Border>
 
-            <ListBox x:Name="DataList" Grid.Column="1" SelectionChanged="DataList_SelectionChanged" />
-        </Grid>
-        
-
-
-        <!--맨 하단 상태바 위치-->
+            <!--맨 하단 상태바 위치-->
         <StatusBar Grid.Row="2">
-            <StatusBarItem Content="가나다라 마바사"/>
+            <StatusBarItem Content="PopulationCounter"/>
             <Separator Style="{StaticResource MahApps.Styles.Separator.StatusBar}"/>
             <StatusBarItem x:Name="StsResult"/>
         </StatusBar>
