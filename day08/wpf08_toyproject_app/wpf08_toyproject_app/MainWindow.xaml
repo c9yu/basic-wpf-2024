@@ -1,0 +1,55 @@
+﻿<mah:MetroWindow x:Class="wpf08_toyproject_app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPack="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:wpf08_toyproject_app"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="300" MinWidth="600" Loaded="MetroWindow_Loaded">
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <iconPack:PackIconIonicons Kind="PeopleiOS" Margin="10,7,0,0" Foreground="White"/>
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>   
+    
+    <Grid>
+        
+        <!-- 행 나누기 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <!-- 첫 번째 행 -->
+        <Grid Grid.Column="0">
+            <Label Content="aaaaa" FontSize="16" FontWeight="Bold" Margin="1,1"/>
+        </Grid>
+
+        <!-- 두 번째 행 -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="Graph" Grid.Column="0">
+                
+            </Border>
+
+            <ListBox x:Name="DataList" Grid.Column="1" SelectionChanged="DataList_SelectionChanged" />
+        </Grid>
+        
+
+
+        <!--맨 하단 상태바 위치-->
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Content="가나다라 마바사"/>
+            <Separator Style="{StaticResource MahApps.Styles.Separator.StatusBar}"/>
+            <StatusBarItem x:Name="StsResult"/>
+        </StatusBar>
+
+    </Grid>
+</mah:MetroWindow>
